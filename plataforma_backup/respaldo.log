@@ -1,0 +1,2117 @@
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:django.request:Internal Server Error: /respaldo_individual/1/
+Traceback (most recent call last):
+  File "/home/manu/backup/plataforma_backup/proyecto/respaldo_individual.py", line 41, in respaldo_individual
+    detalle_backup.objects.create(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1821, in execute_sql
+    for sql, params in self.as_sql():
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1745, in as_sql
+    value_rows = [
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1746, in <listcomp>
+    [
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1747, in <listcomp>
+    self.prepare_value(field, self.pre_save_val(field, obj))
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1695, in pre_save_val
+    return field.pre_save(obj, add=True)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/fields/files.py", line 315, in pre_save
+    if file and not file._committed:
+AttributeError: 'bytes' object has no attribute '_committed'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/views/decorators/http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/views.py", line 87, in respaldo_individual_view
+    respaldo_individual(equipo_id)
+  File "/home/manu/backup/plataforma_backup/proyecto/respaldo_individual.py", line 74, in respaldo_individual
+    backup_obj = backup.objects.create(name_backup=filename)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 83, in _execute
+    self.db.validate_no_broken_transaction()
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 531, in validate_no_broken_transaction
+    raise TransactionManagementError(
+django.db.transaction.TransactionManagementError: An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:django.request:Internal Server Error: /realizar_respaldo/
+Traceback (most recent call last):
+  File "/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py", line 47, in realizar_respaldo
+    detalle_backup.objects.create(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1821, in execute_sql
+    for sql, params in self.as_sql():
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1745, in as_sql
+    value_rows = [
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1746, in <listcomp>
+    [
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1747, in <listcomp>
+    self.prepare_value(field, self.pre_save_val(field, obj))
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1695, in pre_save_val
+    return field.pre_save(obj, add=True)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/fields/files.py", line 315, in pre_save
+    if file and not file._committed:
+AttributeError: 'bytes' object has no attribute '_committed'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/views/decorators/http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/views.py", line 82, in realizar_respaldo_view
+    realizar_respaldo()
+  File "/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py", line 80, in realizar_respaldo
+    detalle_backup.objects.create(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 83, in _execute
+    self.db.validate_no_broken_transaction()
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 531, in validate_no_broken_transaction
+    raise TransactionManagementError(
+django.db.transaction.TransactionManagementError: An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:django.request:Internal Server Error: /realizar_respaldo/
+Traceback (most recent call last):
+  File "/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py", line 47, in realizar_respaldo
+    detalle_backup.objects.create(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1821, in execute_sql
+    for sql, params in self.as_sql():
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1745, in as_sql
+    value_rows = [
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1746, in <listcomp>
+    [
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1747, in <listcomp>
+    self.prepare_value(field, self.pre_save_val(field, obj))
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1695, in pre_save_val
+    return field.pre_save(obj, add=True)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/fields/files.py", line 315, in pre_save
+    if file and not file._committed:
+AttributeError: 'bytes' object has no attribute '_committed'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/views/decorators/http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/views.py", line 82, in realizar_respaldo_view
+    realizar_respaldo()
+  File "/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py", line 80, in realizar_respaldo
+    detalle_backup.objects.create(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 658, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 814, in save
+    self.save_base(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 877, in save_base
+    updated = self._save_table(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 1020, in _save_table
+    results = self._do_insert(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/base.py", line 1061, in _do_insert
+    return manager._insert(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1805, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1822, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 83, in _execute
+    self.db.validate_no_broken_transaction()
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/base/base.py", line 531, in validate_no_broken_transaction
+    raise TransactionManagementError(
+django.db.transaction.TransactionManagementError: An error occurred in the current transaction. You can't execute queries until the end of the 'atomic' block.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/respaldo_individual.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/respaldo_individual.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/respaldo_individual.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/respaldo_individual.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/respaldo_individual.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/respaldo_individual.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/respaldo_individual.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/respaldo_individual.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+ERROR:django.request:Internal Server Error: /realizar_respaldo/
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/views/decorators/http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/views.py", line 94, in realizar_respaldo_view
+    return JsonResponse({'mensaje': mensaje})
+NameError: name 'JsonResponse' is not defined
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+ERROR:django.request:Internal Server Error: /realizar_respaldo/
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/views/decorators/http.py", line 43, in inner
+    return func(request, *args, **kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/views.py", line 94, in realizar_respaldo_view
+    return JsonResponse({'mensaje': mensaje})
+NameError: name 'JsonResponse' is not defined
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+WARNING:django.request:Method Not Allowed (GET): /realizar_respaldo/
+WARNING:django.request:Method Not Allowed (GET): /realizar_respaldo/
+WARNING:django.request:Method Not Allowed (GET): /realizar_respaldo/
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+WARNING:django.request:Method Not Allowed (GET): /realizar_respaldo/
+WARNING:django.request:Method Not Allowed (GET): /realizar_respaldo/
+WARNING:django.request:Method Not Allowed (GET): /realizar_respaldo/
+WARNING:django.request:Method Not Allowed (GET): /realizar_respaldo/
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+WARNING:django.request:Method Not Allowed (GET): /realizar_respaldo/
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+ERROR:root:Error desconocido al respaldar: [Errno None] Unable to connect to port 22 on 192.168.1.32
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+WARNING:django.request:Not Found: /myfirst/
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+WARNING:django.request:Not Found: /undefined
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+WARNING:django.request:Not Found: /undefined
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+WARNING:django.request:Not Found: /undefined
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:django.request:Internal Server Error: /respaldo_individual/1/
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:django.request:Internal Server Error: /respaldo_individual/1/
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:django.request:Internal Server Error: /respaldo_individual/1/
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:django.request:Internal Server Error: /respaldo_individual/1/
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:django.request:Internal Server Error: /respaldo_individual/1/
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:django.request:Internal Server Error: /respaldo_individual/1/
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+WARNING:django.request:Method Not Allowed (GET): /respaldo_individual/1/
+WARNING:django.request:Method Not Allowed (GET): /respaldo_individual/1/
+WARNING:django.request:Method Not Allowed (GET): /respaldo_individual/1/
+WARNING:django.request:Method Not Allowed (GET): /respaldo_individual/1/
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/models.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/models.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/models.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/models.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/models.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/models.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/admin.py changed, reloading.
+ERROR:django.request:Internal Server Error: /admin/proyecto/cronconfig/
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "proyecto_cronconfig" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "proyecto_cronconfig"
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/views/main.py", line 123, in __init__
+    self.get_results(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/views/main.py", line 279, in get_results
+    result_count = paginator.count
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/paginator.py", line 93, in count
+    return c()
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 608, in count
+    return self.query.get_count(using=self.db)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 568, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "proyecto_cronconfig" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "proyecto_cronconfig"
+                                          ^
+
+ERROR:django.request:Internal Server Error: /admin/proyecto/cronconfig/
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "proyecto_cronconfig" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "proyecto_cronconfig"
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/views/main.py", line 123, in __init__
+    self.get_results(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/views/main.py", line 279, in get_results
+    result_count = paginator.count
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/paginator.py", line 93, in count
+    return c()
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 608, in count
+    return self.query.get_count(using=self.db)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 568, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "proyecto_cronconfig" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "proyecto_cronconfig"
+                                          ^
+
+ERROR:django.request:Internal Server Error: /admin/proyecto/cronconfig/
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "proyecto_cronconfig" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "proyecto_cronconfig"
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/views/main.py", line 123, in __init__
+    self.get_results(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/views/main.py", line 279, in get_results
+    result_count = paginator.count
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/paginator.py", line 93, in count
+    return c()
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 608, in count
+    return self.query.get_count(using=self.db)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 568, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "proyecto_cronconfig" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "proyecto_cronconfig"
+                                          ^
+
+ERROR:django.request:Internal Server Error: /admin/proyecto/cronconfig/
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "proyecto_cronconfig" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "proyecto_cronconfig"
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/views/main.py", line 123, in __init__
+    self.get_results(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/views/main.py", line 279, in get_results
+    result_count = paginator.count
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/paginator.py", line 93, in count
+    return c()
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 608, in count
+    return self.query.get_count(using=self.db)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 568, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "proyecto_cronconfig" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "proyecto_cronconfig"
+                                          ^
+
+ERROR:django.request:Internal Server Error: /admin/proyecto/cronconfig/
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedTable: relation "proyecto_cronconfig" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "proyecto_cronconfig"
+                                          ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1926, in changelist_view
+    cl = self.get_changelist_instance(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 836, in get_changelist_instance
+    return ChangeList(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/views/main.py", line 123, in __init__
+    self.get_results(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/views/main.py", line 279, in get_results
+    result_count = paginator.count
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/paginator.py", line 93, in count
+    return c()
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 608, in count
+    return self.query.get_count(using=self.db)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 568, in get_count
+    return obj.get_aggregation(using, {"__count": Count("*")})["__count"]
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 554, in get_aggregation
+    result = compiler.execute_sql(SINGLE)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: relation "proyecto_cronconfig" does not exist
+LINE 1: SELECT COUNT(*) AS "__count" FROM "proyecto_cronconfig"
+                                          ^
+
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/models.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/admin.py changed, reloading.
+ERROR:django.request:Internal Server Error: /admin/proyecto/cronconfig/
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedColumn: column proyecto_cronconfig.hora_ejecucion does not exist
+LINE 1: SELECT "proyecto_cronconfig"."id", "proyecto_cronconfig"."ho...
+                                           ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2065, in changelist_view
+    "selection_note": _("0 of %(cnt)s selected") % {"cnt": len(cl.result_list)},
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column proyecto_cronconfig.hora_ejecucion does not exist
+LINE 1: SELECT "proyecto_cronconfig"."id", "proyecto_cronconfig"."ho...
+                                           ^
+
+ERROR:django.request:Internal Server Error: /admin/proyecto/cronconfig/1/delete/
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedColumn: column proyecto_cronconfig.hora_ejecucion does not exist
+LINE 1: SELECT "proyecto_cronconfig"."id", "proyecto_cronconfig"."ho...
+                                           ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2106, in delete_view
+    return self._delete_view(request, object_id, extra_context)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2118, in _delete_view
+    obj = self.get_object(request, unquote(object_id), to_field)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 866, in get_object
+    return queryset.get(**{field.name: object_id})
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 633, in get
+    num = len(clone)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column proyecto_cronconfig.hora_ejecucion does not exist
+LINE 1: SELECT "proyecto_cronconfig"."id", "proyecto_cronconfig"."ho...
+                                           ^
+
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/models.py changed, reloading.
+WARNING:django.request:Not Found: /admin/proyecto/cronconfig/
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/models.py changed, reloading.
+WARNING:django.request:Method Not Allowed (GET): /realizar_respaldo/
+WARNING:django.request:Method Not Allowed (GET): /realizar_respaldo/
+ERROR:root:Error desconocido al respaldar: [Errno None] Unable to connect to port 22 on 192.168.1.32
+WARNING:django.request:Method Not Allowed (GET): /realizar_respaldo/
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+WARNING:django.request:Method Not Allowed (GET): /realizar_respaldo/
+WARNING:django.request:Method Not Allowed (GET): /realizar_respaldo/
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:root:Error desconocido al respaldar: [Errno None] Unable to connect to port 22 on 192.168.1.32
+ERROR:root:Error desconocido al respaldar: [Errno None] Unable to connect to port 22 on 192.168.1.32
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+WARNING:django.security.csrf:Forbidden (CSRF cookie not set.): /realizar_respaldo/
+WARNING:django.security.csrf:Forbidden (CSRF cookie not set.): /realizar_respaldo/
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/urls.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('47 19 * * *', 'proyecto.cron.tarea_programada')
+Traceback (most recent call last):
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 5, in tarea_programada
+    csrf_token = get_token(request)
+NameError: name 'request' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 12, in tarea_programada
+    except requests.RequestException as e:
+NameError: name 'requests' is not defined
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('47 19 * * *', 'proyecto.cron.tarea_programada')
+Traceback (most recent call last):
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 5, in tarea_programada
+    csrf_token = get_token(request)
+NameError: name 'request' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 12, in tarea_programada
+    except requests.RequestException as e:
+NameError: name 'requests' is not defined
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('56 19 * * *', 'proyecto.cron.tarea_programada')
+Traceback (most recent call last):
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 5, in tarea_programada
+    csrf_token = get_token(request)
+NameError: name 'request' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 12, in tarea_programada
+    except requests.RequestException as e:
+NameError: name 'requests' is not defined
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('00 20 * * *', 'proyecto.cron.tarea_programada')
+Traceback (most recent call last):
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 6, in tarea_programada
+    csrf_token = get_token(request)
+NameError: name 'request' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 13, in tarea_programada
+    except requests.RequestException as e:
+AttributeError: module 'requests' has no attribute 'RequestException'
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/urls.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('05 20 * * *', 'proyecto.cron.tarea_programada')
+Traceback (most recent call last):
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 6, in tarea_programada
+    csrf_token = get_token(request)
+NameError: name 'request' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 13, in tarea_programada
+    except requests.RequestException as e:
+AttributeError: module 'requests' has no attribute 'RequestException'
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('40 20 * * *', 'proyecto.cron.tarea_programada')
+Traceback (most recent call last):
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 6, in tarea_programada
+    csrf_token = get_token(request)
+NameError: name 'request' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 13, in tarea_programada
+    except requests.RequestException as e:
+AttributeError: module 'requests' has no attribute 'RequestException'
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('37 21 * * *', 'proyecto.cron.tarea_programada')
+Traceback (most recent call last):
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 8, in tarea_programada
+    csrf_token = get_token(request)
+NameError: name 'request' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 15, in tarea_programada
+    except requests.RequestException as e:
+AttributeError: module 'requests' has no attribute 'RequestException'
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('42 21 * * *', 'proyecto.cron.tarea_programada')
+Traceback (most recent call last):
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 8, in tarea_programada
+    csrf_token = get_token(request)
+NameError: name 'request' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 18, in tarea_programada
+    except requests.RequestException as e:
+AttributeError: module 'requests' has no attribute 'RequestException'
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('42 21 * * *', 'proyecto.cron.tarea_programada')
+Traceback (most recent call last):
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 9, in tarea_programada
+    csrf_token = get_token(request)
+NameError: name 'request' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 20, in tarea_programada
+    except requests.RequestException as e:
+AttributeError: module 'requests' has no attribute 'RequestException'
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('42 21 * * *', 'proyecto.cron.tarea_programada')
+Traceback (most recent call last):
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 9, in tarea_programada
+    csrf_token = get_token(None)  # None porque no estamos dentro de una vista de Django
+  File "/home/manu/.local/lib/python3.10/site-packages/django/middleware/csrf.py", line 111, in get_token
+    if "CSRF_COOKIE" in request.META:
+AttributeError: 'NoneType' object has no attribute 'META'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 21, in tarea_programada
+    except requests.RequestException as e:
+AttributeError: module 'requests' has no attribute 'RequestException'
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('42 21 * * *', 'proyecto.cron.tarea_programada')
+Traceback (most recent call last):
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 9, in tarea_programada
+    csrf_token = get_token(None)  # None porque no estamos dentro de una vista de Django
+  File "/home/manu/.local/lib/python3.10/site-packages/django/middleware/csrf.py", line 111, in get_token
+    if "CSRF_COOKIE" in request.META:
+AttributeError: 'NoneType' object has no attribute 'META'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 22, in tarea_programada
+    except requests.RequestException as e:
+AttributeError: module 'requests' has no attribute 'RequestException'
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('42 21 * * *', 'proyecto.cron.tarea_programada')
+Traceback (most recent call last):
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 9, in tarea_programada
+    csrf_token = get_token(None)  # None porque no estamos dentro de una vista de Django
+  File "/home/manu/.local/lib/python3.10/site-packages/django/middleware/csrf.py", line 111, in get_token
+    if "CSRF_COOKIE" in request.META:
+AttributeError: 'NoneType' object has no attribute 'META'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 22, in tarea_programada
+    except requests.RequestException as e:
+AttributeError: module 'requests' has no attribute 'RequestException'
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('42 21 * * *', 'proyecto.cron.tarea_programada')
+Traceback (most recent call last):
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 7, in tarea_programada
+    csrf_token = get_token(None)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/middleware/csrf.py", line 111, in get_token
+    if "CSRF_COOKIE" in request.META:
+AttributeError: 'NoneType' object has no attribute 'META'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 24, in tarea_programada
+    except requests.RequestException as e:
+AttributeError: module 'requests' has no attribute 'RequestException'
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('42 21 * * *', 'proyecto.cron.tarea_programada')
+Traceback (most recent call last):
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 7, in tarea_programada
+    csrf_token = get_token(None)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/middleware/csrf.py", line 111, in get_token
+    if "CSRF_COOKIE" in request.META:
+AttributeError: 'NoneType' object has no attribute 'META'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 24, in tarea_programada
+    except requests.RequestException as e:
+AttributeError: module 'requests' has no attribute 'RequestException'
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('42 21 * * *', 'proyecto.cron.tarea_programada')
+Traceback (most recent call last):
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 7, in tarea_programada
+    csrf_token = get_token(None)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/middleware/csrf.py", line 111, in get_token
+    if "CSRF_COOKIE" in request.META:
+AttributeError: 'NoneType' object has no attribute 'META'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 24, in tarea_programada
+    except requests.RequestException as e:
+AttributeError: module 'requests' has no attribute 'RequestException'
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('42 21 * * *', 'proyecto.cron.tarea_programada')
+Traceback (most recent call last):
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 7, in tarea_programada
+    csrf_token = get_token(None)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/middleware/csrf.py", line 111, in get_token
+    if "CSRF_COOKIE" in request.META:
+AttributeError: 'NoneType' object has no attribute 'META'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 24, in tarea_programada
+    except requests.RequestException as e:
+AttributeError: module 'requests' has no attribute 'RequestException'
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('42 21 * * *', 'proyecto.cron.tarea_programada')
+Traceback (most recent call last):
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 7, in tarea_programada
+    csrf_token = get_token(None)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/middleware/csrf.py", line 111, in get_token
+    if "CSRF_COOKIE" in request.META:
+AttributeError: 'NoneType' object has no attribute 'META'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 24, in tarea_programada
+    except requests.RequestException as e:
+AttributeError: module 'requests' has no attribute 'RequestException'
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/.local/lib/python3.10/site-packages/django_crontab/__init__.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+ERROR:root:Error desconocido al respaldar: [Errno None] Unable to connect to port 22 on 192.168.1.32
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/models.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/models.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/admin.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/admin.py changed, reloading.
+ERROR:root:Error desconocido al respaldar: [Errno None] Unable to connect to port 22 on 192.168.1.32
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+ERROR:root:Error desconocido al respaldar: [Errno None] Unable to connect to port 22 on 192.168.1.32
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.32)
+WARNING:django.request:Not Found: /favicon.ico
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error al encontrar el archivo : [Errno 2] No such file or directory: '/home/manu/tftp/192.168.10.1_20240227044145.txt'
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error al encontrar el archivo : [Errno 2] No such file or directory: '/home/manu/tftp/192.168.30.2_20240227044147.txt'
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error al encontrar el archivo : [Errno 2] No such file or directory: '/home/manu/tftp/192.168.20.2_20240227044149.txt'
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error al encontrar el archivo : [Errno 2] No such file or directory: '/home/manu/tftp/192.168.20.2_20240227044152.txt'
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/respaldo_individual.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU3 (192.168.30.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU4 (192.168.20.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.20.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU3 (192.168.30.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU4 (192.168.20.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.20.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU3 (192.168.30.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU4 (192.168.20.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.20.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU3 (192.168.30.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU4 (192.168.20.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.20.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU3 (192.168.30.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU4 (192.168.20.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.20.2)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU3 (192.168.30.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU4 (192.168.20.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.20.2)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU3 (192.168.30.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU4 (192.168.20.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.20.2)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU3 (192.168.30.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU4 (192.168.20.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.20.2)
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('40 05 * * *', 'proyecto.cron.programa')
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 5, in programa
+    respaldo_programado()  # Llama a la función realizar_respaldo()
+  File "/home/manu/backup/plataforma_backup/proyecto/respaldo_programado.py", line 38, in respaldo_programado
+    ssh_client.connect(ip, port, username, password, allow_agent=False, look_for_keys=False)
+  File "/usr/local/lib/python3.10/dist-packages/paramiko/client.py", line 386, in connect
+    sock.connect(addr)
+KeyboardInterrupt
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('40 05 * * *', 'proyecto.cron.programa')
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 5, in programa
+    respaldo_programado()  # Llama a la función realizar_respaldo()
+  File "/home/manu/backup/plataforma_backup/proyecto/respaldo_programado.py", line 38, in respaldo_programado
+    ssh_client.connect(ip, port, username, password, allow_agent=False, look_for_keys=False)
+  File "/usr/local/lib/python3.10/dist-packages/paramiko/client.py", line 386, in connect
+    sock.connect(addr)
+KeyboardInterrupt
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error desconocido al respaldar: local variable 'ruta_archivo' referenced before assignment
+ERROR:root:Error desconocido al respaldar: [Errno 110] Connection timed out
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error desconocido al respaldar: local variable 'ruta_archivo' referenced before assignment
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error desconocido al respaldar: local variable 'ruta_archivo' referenced before assignment
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('40 05 * * *', 'proyecto.cron.programa')
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 5, in programa
+    respaldo_programado()  # Llama a la función realizar_respaldo()
+  File "/home/manu/backup/plataforma_backup/proyecto/respaldo_programado.py", line 33, in respaldo_programado
+    ruta_archivo = ruta_archivo + filename
+UnboundLocalError: local variable 'ruta_archivo' referenced before assignment
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('40 05 * * *', 'proyecto.cron.programa')
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 5, in programa
+    respaldo_programado()  # Llama a la función realizar_respaldo()
+  File "/home/manu/backup/plataforma_backup/proyecto/respaldo_programado.py", line 33, in respaldo_programado
+    ruta_archivo = ruta_archivo + filename
+UnboundLocalError: local variable 'ruta_archivo' referenced before assignment
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('40 05 * * *', 'proyecto.cron.programa')
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 5, in programa
+    respaldo_programado()  # Llama a la función realizar_respaldo()
+  File "/home/manu/backup/plataforma_backup/proyecto/respaldo_programado.py", line 33, in respaldo_programado
+    ruta_archivo = ruta_archivo + filename
+UnboundLocalError: local variable 'ruta_archivo' referenced before assignment
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error desconocido al respaldar: Detected path traversal attempt in '/home/manu/backup/plataforma_backup/192.168.10.1_20240227063630.txt'
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('40 05 * * *', 'proyecto.cron.programa')
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 5, in programa
+    respaldo_programado()  # Llama a la función realizar_respaldo()
+  File "/home/manu/backup/plataforma_backup/proyecto/respaldo_programado.py", line 38, in respaldo_programado
+    ssh_client.connect(ip, port, username, password, allow_agent=False, look_for_keys=False)
+  File "/usr/local/lib/python3.10/dist-packages/paramiko/client.py", line 386, in connect
+    sock.connect(addr)
+KeyboardInterrupt
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('40 05 * * *', 'proyecto.cron.programa')
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 5, in programa
+    respaldo_programado()  # Llama a la función realizar_respaldo()
+  File "/home/manu/backup/plataforma_backup/proyecto/respaldo_programado.py", line 38, in respaldo_programado
+    ssh_client.connect(ip, port, username, password, allow_agent=False, look_for_keys=False)
+  File "/usr/local/lib/python3.10/dist-packages/paramiko/client.py", line 386, in connect
+    sock.connect(addr)
+KeyboardInterrupt
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+ERROR:root:Error desconocido al respaldar: [Errno 110] Connection timed out
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU4 (192.168.20.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.20.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU3 (192.168.30.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU4 (192.168.20.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.20.2)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+ERROR:root:Error desconocido al respaldar: [Errno 110] Connection timed out
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU4 (192.168.20.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.20.2)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+ERROR:root:Error desconocido al respaldar: [Errno 110] Connection timed out
+ERROR:django_crontab.crontab:Failed to complete cronjob at ('20 07 * * *', 'proyecto.cron.programa')
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django_crontab/crontab.py", line 145, in run_job
+    func(*job_args, **job_kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/cron.py", line 4, in programa
+    respaldo_programado() # Llama a la función realizar_respaldo()
+  File "/home/manu/backup/plataforma_backup/proyecto/respaldo_programado.py", line 38, in respaldo_programado
+    ssh_client.connect(ip, port, username, password, allow_agent=False, look_for_keys=False)
+  File "/usr/local/lib/python3.10/dist-packages/paramiko/client.py", line 386, in connect
+    sock.connect(addr)
+KeyboardInterrupt
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+ERROR:root:Error desconocido al respaldar: [Errno 110] Connection timed out
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+ERROR:root:Error desconocido al respaldar: [Errno 110] Connection timed out
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU4 (192.168.20.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.10.2)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU4 (192.168.20.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.10.2)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+ERROR:root:Error desconocido al respaldar: [Errno 110] Connection timed out
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.10.2)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU4 (192.168.20.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.10.2)
+WARNING:django.request:Not Found: /favicon.ico
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error al encontrar el archivo : [Errno 2] No such file or directory: '/home/manu/tftp/192.168.1.1_20240228225411.txt'
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error al encontrar el archivo : [Errno 2] No such file or directory: '/home/manu/tftp/192.168.1.2_20240228225413.txt'
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error al encontrar el archivo : [Errno 2] No such file or directory: '/home/manu/tftp/192.168.1.3_20240228225416.txt'
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error al encontrar el archivo : [Errno 2] No such file or directory: '/home/manu/tftp/192.168.1.4_20240228225418.txt'
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error al encontrar el archivo : [Errno 2] No such file or directory: '/home/manu/tftp/192.168.1.5_20240228225420.txt'
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error al encontrar el archivo : [Errno 2] No such file or directory: '/home/manu/tftp/192.168.1.6_20240228225423.txt'
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error al encontrar el archivo : [Errno 2] No such file or directory: '/home/manu/tftp/192.168.1.7_20240228225425.txt'
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error al encontrar el archivo : [Errno 2] No such file or directory: '/home/manu/tftp/192.168.1.8_20240228225427.txt'
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error al encontrar el archivo : [Errno 2] No such file or directory: '/home/manu/tftp/192.168.1.9_20240228225431.txt'
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error al encontrar el archivo : [Errno 2] No such file or directory: '/home/manu/tftp/192.168.1.10_20240228225433.txt'
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error al encontrar el archivo : [Errno 2] No such file or directory: '/home/manu/tftp/192.168.1.11_20240228225436.txt'
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/respaldo_individual.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/respaldo_individual.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.1.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU3 (192.168.1.3)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU4 (192.168.1.4)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU5 (192.168.1.5)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU6 (192.168.1.6)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU7 (192.168.1.7)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU8 (192.168.1.8)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU9 (192.168.1.9)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU10 (192.168.1.10)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU11 (192.168.1.11)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+WARNING:django.request:Not Found: /favicon.ico
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error al encontrar el archivo : [Errno 2] No such file or directory: '/home/manu/tftp/192.168.10.1_20240229213020.txt'
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error al encontrar el archivo : [Errno 2] No such file or directory: '/home/manu/tftp/192.168.10.2_20240229213022.txt'
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error al encontrar el archivo : [Errno 2] No such file or directory: '/home/manu/tftp/192.168.30.2_20240229213026.txt'
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error al encontrar el archivo : [Errno 2] No such file or directory: '/home/manu/tftp/192.168.20.2_20240229213029.txt'
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/respaldo_individual.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.10.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU3 (192.168.30.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU4 (192.168.20.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django_cron:Cron class 'RealizarRespaldoJob' does not have a code attribute
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/__init__.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.10.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.10.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU3 (192.168.30.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU4 (192.168.20.2)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/__init__.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.10.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU3 (192.168.30.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU4 (192.168.20.2)
+INFO:django.utils.autoreload:Watching for file changes with StatReloader
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /admin/proyecto/configuracion/add/
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1886, in add_view
+    return self.changeform_view(request, None, form_url, extra_context)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1747, in changeform_view
+    return self._changeform_view(request, object_id, form_url, extra_context)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 1798, in _changeform_view
+    self.save_model(request, new_object, form, not add)
+  File "/home/manu/backup/plataforma_backup/proyecto/admin.py", line 19, in save_model
+    programar_respaldo()
+NameError: name 'programar_respaldo' is not defined
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/admin.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.10.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.10.2)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/models.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/models.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/admin.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.10.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.10.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU3 (192.168.30.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU4 (192.168.20.2)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.10.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU3 (192.168.30.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU4 (192.168.20.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.10.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.10.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU3 (192.168.30.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU4 (192.168.20.2)
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/models.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/admin.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/admin.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/admin.py changed, reloading.
+ERROR:root:Error desconocido al respaldar: [Errno 110] Connection timed out
+ERROR:root:Error desconocido al respaldar: [Errno 110] Connection timed out
+ERROR:root:Error desconocido al respaldar: [Errno 110] Connection timed out
+ERROR:root:Error desconocido al respaldar: [Errno 110] Connection timed out
+WARNING:django.request:Not Found: /favicon.ico
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/admin.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/admin.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/models.py changed, reloading.
+ERROR:root:Error desconocido al respaldar: [Errno None] Unable to connect to port 22 on 192.168.1.1
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error al encontrar el archivo : [Errno 2] No such file or directory: '/home/manu/tftp/192.168.1.1_20240319032142.txt'
+ERROR:django.request:Internal Server Error: /admin/proyecto/backup/
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+psycopg2.errors.UndefinedColumn: column proyecto_backup.name_history does not exist
+LINE 1: ..._backup"."name_backup", "proyecto_backup"."date", "proyecto_...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 688, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/views/decorators/cache.py", line 62, in _wrapper_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/sites.py", line 242, in inner
+    return view(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/utils/decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/admin/options.py", line 2065, in changelist_view
+    "selection_note": _("0 of %(cnt)s selected") % {"cnt": len(cl.result_list)},
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+django.db.utils.ProgrammingError: column proyecto_backup.name_history does not exist
+LINE 1: ..._backup"."name_backup", "proyecto_backup"."date", "proyecto_...
+                                                             ^
+
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+ERROR:root:Error al encontrar el archivo : [Errno 2] No such file or directory: '/home/manu/tftp/192.168.1.1_20240319033249.txt'
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/respaldo_individual.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.1)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/respaldo_individual.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.1.2)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/models.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/models.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/respaldo_individual.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.1.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.1.2)
+WARNING:django.request:Not Found: /favicon.ico
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.1.2)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.1.2)
+ERROR:django.request:Internal Server Error: /realizar_respaldo/
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.1.2)
+ERROR:django.request:Internal Server Error: /realizar_respaldo/
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.1.2)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/urls.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/urls.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/urls.py changed, reloading.
+ERROR:django.request:Internal Server Error: /historial/
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/views.py", line 64, in respaldo_backup
+    backups = backup.objects.all().order_by('-fecha_creacion')
+NameError: name 'backup' is not defined
+ERROR:django.request:Internal Server Error: /historial/
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/views.py", line 64, in respaldo_backup
+    backups = backup.objects.all().order_by('-fecha_creacion')
+NameError: name 'backup' is not defined
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+ERROR:django.request:Internal Server Error: /historial/
+Traceback (most recent call last):
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/lib/python3.10/contextlib.py", line 79, in inner
+    return func(*args, **kwds)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+  File "/home/manu/backup/plataforma_backup/proyecto/views.py", line 64, in respaldo_backup
+    backups = backup.objects.all().order_by('-fecha_creacion')
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/query.py", line 1659, in order_by
+    obj.query.add_ordering(*field_names)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 2221, in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+  File "/home/manu/.local/lib/python3.10/site-packages/django/db/models/sql/query.py", line 1724, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'fecha_creacion' into field. Choices are: backup, date, id, name_backup
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.1.2)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.1.2)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/realizar_respaldos.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.1.2)
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/urls.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/respaldo_individual.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.1.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU1 (192.168.1.1)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:root:Respaldo exitoso del equipo IOU2 (192.168.1.2)
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/respaldo_individual.py changed, reloading.
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:paramiko.transport:Connected (version 2.0, client Cisco-1.25)
+INFO:paramiko.transport:Authentication (password) successful!
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/respaldo_individual.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/views.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/respaldo_individual.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/urls.py changed, reloading.
+INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
+WARNING:django.request:Not Found: /favicon.ico

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Respaldos</title>
+    {% load static %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'app/css/estilos.css'%}">
+</head>
+<body>
+<header id="header">
+    <img src="{% static 'app/img/menuiconwhite.png' %}" alt="menu" class="menu" id="menu">
+    <div class="contenedor_logo">
+        <img src="{% static 'app/img/Backup-Transparent-Background.png'%}" alt="logo" class="logo">
+    </div>
+    <div>
+        <nav id="nav">
+            <ul>
+                <li>
+                    <a class="btn btn-dark" href="{% url 'respaldo_backup' %}">Historial</a>
+                </li>
+                <li>
+                    <a class="btn btn-dark" href="{% url 'home' %}">Equipos</a>
+                </li>
+                <li>
+                    <a class="btn btn-dark" href="{% url 'admin' %}">Admin</a>
+                </li>
+                {% if user.is_authenticated %}
+                    <li>
+                        <a class="mensaje-saludo">Bienvenido, {{ user.username }}</a>
+                        <a class="btn btn-danger" href="{% url 'logout' %}">Cerrar Sesión</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+</header>
+<div id="contenido">
+    {% block contenido %}
+    {% endblock contenido %}
+</div>
+<footer>
+    <footer>
+        <div class="logo_footer">
+            <img src="{% static 'app/img/pngwing.com.png'%}" alt="logo">
+        </div>
+    </footer>
+</footer>
+<script src="{% static 'app/js/menu.js' %}"></script>
+</body>
+</html>

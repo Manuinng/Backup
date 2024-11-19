@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block contenido %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<div align="center" id="loading-message" style="display: none;">
+    <p>Realizando respaldos...</p>
+</div>
+
+<script>
+    function realizarRespaldo() {
+        document.getElementById('loading-message').style.display = 'block';
+        fetch("{% url 'realizar_respaldo' %}", {
+            method: 'POST',
+            headers: {
+            'X-CSRFToken': "{{ csrf_token }}",
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+        },
+        })
+        .then(response => {
+            document.getElementById('loading-message').style.display = 'none';
+            if (response.ok) {
+                return response.json().then(data => {
+                    // Mostrar SweetAlert con el mensaje de éxito
+                    Swal.fire({
+                        title: 'Mensaje',
+                        text: data.mensaje,
+                        icon: 'success',
+                    }).then(() => {
+                        // Redirigir o actualizar la página según la URL proporcionada en la respuesta JSON
+                        window.location.href = data.redirect_url;
+                    });
+                });
+            } else {
+                // Si la respuesta no es exitosa, mostrar mensaje de error genérico
+                throw new Error('Hubo un error al realizar el respaldo.');
+            }
+        })
+        .catch(error => {
+            document.getElementById('loading-message').style.display = 'none';
+            // Manejar errores de red u otras excepciones
+            Swal.fire({
+                title: 'Error',
+                text: error.message,
+                icon: 'error',
+            }).then(() => {
+                window.location.reload();
+            });
+            console.error('Error al realizar el respaldo:', error);
+        });
+    }
+
+
+    function verRespaldos(id) {
+        window.location.href = "{% url 'respaldo' 0 %}".replace('0', id);
+    }
+
+</script>
+
+<br>
+<div class="card">
+    <div class="card-body">
+        <div class="card-body gap-0" align="center" margin-bottom= 10px>
+            <button type="button" class="btn btn-primary" onclick="realizarRespaldo()">Realizar Respaldos</button>
+        </div>
+        <table class="table table-striped table-hover table-responsive-sm">
+            <tr>
+                <th>Dispositivo</th>
+                <th>IP</th>
+                <th>Estado</th>
+                <th>
+
+                </th>
+            </tr>
+            {% for e in entity %}
+                    <tr>
+                        <td>{{ e.name_equipo | capfirst }}</td>
+                        <td>{{ e.ip | title }}</td>
+                        <td>
+                            {% if e.ultimo_respaldo %}
+                                {% if e.ultimo_respaldo.status == 0 %}
+                                    <span class="badge text-bg-success">Respaldado</span>
+                                {% else %}
+                                    <span class="badge text-bg-danger">No Respaldado</span>
+                                {% endif %}
+                            {% else %}
+                                <span class="badge text-bg-warning">Sin Respaldos</span>
+                            {% endif %}
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-secondary" onclick="verRespaldos({{ e.id }})">Ver Respaldos</button>
+                        </td>
+                    </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <div>
+            {% include 'paginator.html' %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
