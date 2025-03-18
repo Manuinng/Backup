@@ -2115,3 +2115,5 @@ INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/respal
 INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/proyecto/urls.py changed, reloading.
 INFO:django.utils.autoreload:/home/manu/backup/plataforma_backup/plataforma_backup/settings.py changed, reloading.
 WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /favicon.ico
