@@ -4,3 +4,4 @@ paramiko
 django-environ
 psycopg2-binary
 python-crontab
+django-cron
